@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: 	#00304E;
+}
+.kanban-title{
+    color: white;
+}
+/* Centrado del título principal */
+.main-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    background-color: #00534C;
+}
+
+/* Configuración del tablero Kanban */
+.kanban-board {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: black;
+}
+
+.kanban-column {
+    width: 30%;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px white;
+}
+
+.task-list {
+    margin-top: 10px;
+    padding: 10px 10px;
+}
+
+/* Estilos para las tarjetas (task) */
+.task {
+    background-color: #00534C;
+    color: white;
+    padding: 5px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease; 
+}
+
+/* Efecto hover sobre las tarjetas */
+.task:hover {
+    background-color: #006907; 
+    cursor: pointer;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px !important;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(9, 88, 12);
+}
+
+button:hover {
+    background-color: rgb(114, 214, 14);
+
+}
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+/* Alinear el texto y los inputs en las modales */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.modal-content form input,
+.modal-content form select,
+.modal-content form textarea {
+    margin-bottom: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+}

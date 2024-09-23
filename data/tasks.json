@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Primera tarea",
+    "description": "Descripción de la primera tarea",
+    "responsible": "Juan Pérez",
+    "status": "done"
+  },
+  {
+    "id": 2,
+    "name": "Nueva tarea",
+    "description": "Esta es una tarea de prueba",
+    "responsible": "Juan Pérez",
+    "status": "done"
+  },
+  {
+    "id": 3,
+    "name": "Otra tarea",
+    "description": "Otra tarea para testing",
+    "responsible": "Ana Gómez",
+    "status": "doing"
+  },
+  {
+    "id": 4,
+    "name": "Tarea de prueba",
+    "description": "Es una tarea de prueba",
+    "responsible": "Juan Pérez",
+    "status": "todo"
+  }
+]

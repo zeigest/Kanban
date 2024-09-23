@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="main-title-container">
+        <h1 class="main-title">Sistema de administración de tareas</h1>
+    </div>
+    <div class="kanban-board">
+        <div class="kanban-column" id="todo-column">
+            <h2 class="kanban-title">To Do</h2>
+            <button onclick="openAddTaskModal('todo')">Agregar tarea</button>
+            <div class="task-list" id="todo-tasks"></div>
+        </div>
+        <div class="kanban-column" id="doing-column">
+            <h2 class="kanban-title">Doing</h2>
+            <button onclick="openAddTaskModal('doing')">Agregar tarea</button>
+            <div class="task-list" id="doing-tasks"></div>
+        </div>
+        <div class="kanban-column" id="done-column">
+            <h2 class="kanban-title">Done</h2>
+            <button onclick="openAddTaskModal('done')">Agregar tarea</button>
+            <div class="task-list" id="done-tasks"></div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar tareas -->
+    <div id="add-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAddTaskModal()">&times;</span>
+            <h2>Agregar Tarea</h2>
+            <form id="add-task-form">
+                <label for="name">Nombre de la tarea:</label>
+                <input type="text" id="add-task-name" name="name" maxlength="40" required>
+                
+                <label for="description">Descripción:</label>
+                <textarea id="add-task-desc" name="description" maxlength="400"></textarea>
+    
+                <label for="responsible">Responsable del equipo:</label>
+                <select id="add-task-responsible" name="responsible"></select>
+    
+                <label for="status">Estatus:</label>
+                <select id="add-task-status" name="status" required>
+                    <option value="todo">To Do</option>
+                    <option value="doing">Doing</option>
+                    <option value="done">Done</option>
+                </select>
+    
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para modificar tareas -->
+    <div id="edit-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditTaskModal()">&times;</span>
+            <h2>Modificar Tarea</h2>
+            <form id="edit-task-form">
+                <input type="hidden" id="edit-task-id">
+                
+                <label for="name">Nombre de la tarea:</label>
+                <input type="text" id="edit-task-name" name="name" maxlength="40" required>
+                
+                <label for="description">Descripción:</label>
+                <textarea id="edit-task-desc" name="description" maxlength="400"></textarea>
+    
+                <label for="responsible">Responsable del equipo:</label>
+                <select id="edit-task-responsible" name="responsible"></select>
+    
+                <label for="status">Estatus:</label>
+                <select id="edit-task-status" name="status" required>
+                    <option value="todo">To Do</option>
+                    <option value="doing">Doing</option>
+                    <option value="done">Done</option>
+                </select>
+    
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>
