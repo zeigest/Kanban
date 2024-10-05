@@ -1,6 +1,22 @@
+// Conectar al servidor de WebSockets
+const socket = io();
+
 document.addEventListener('DOMContentLoaded', () => {
     loadTasks();
     loadUsers(); // Cargar usuarios para los selectores en los modales
+
+    // Escuchar notificaciones desde el servidor de WebSockets
+    socket.on('notification', (data) => {
+        console.log('Notificación recibida:', data.message);
+        alert(data.message);  // Mostrar la notificación de bienvenida
+    });
+
+    // Escuchar actualizaciones de tareas en tiempo real
+    socket.on('taskUpdated', (data) => {
+        console.log('Actualización en tiempo real:', data.message);
+        alert(`Actualización en tareas: ${data.message}`);  // Mostrar mensaje en alerta
+        updateSingleTask(data.task);  // Actualizar la tarea específica
+    });
 });
 
 // Función para abrir el modal de agregar tarea
@@ -48,10 +64,24 @@ function loadTasks() {
         .catch(err => console.error('Error al cargar tareas:', err));
 }
 
+// Función para actualizar una tarea específica sin duplicar
+function updateSingleTask(task) {
+    // Buscar y eliminar cualquier tarea existente con el mismo ID
+    const existingTask = document.querySelector(`[data-id='${task.id}']`);
+    if (existingTask) {
+        existingTask.remove();
+    }
+
+    // Crear y añadir el nuevo elemento de tarea
+    const taskElement = createTaskElement(task);
+    document.getElementById(`${task.status}-tasks`).appendChild(taskElement);
+}
+
 // Función para crear un elemento de tarea en el tablero
 function createTaskElement(task) {
     const taskElement = document.createElement('div');
     taskElement.classList.add('task');
+    taskElement.setAttribute('data-id', task.id); // Añadir un atributo data-id para la tarea
     taskElement.innerHTML = `
         <h3>${task.name}</h3>
         <p>${task.description}</p>
@@ -97,6 +127,11 @@ document.getElementById('add-task-form').addEventListener('submit', function (ev
         responsible: document.getElementById('add-task-responsible').value,
         status: document.getElementById('add-task-status').value
     };
+
+    // Emitir un evento WebSocket cuando se añada una nueva tarea
+    socket.emit('taskAdded', taskData);
+
+    // Llamada para agregar la tarea al servidor
     addTask(taskData);
 });
 

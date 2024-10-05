@@ -1,0 +1,32 @@
+version: '3'
+services:
+  tasks-service:
+    build: ./tasks-service
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./tasks-service:/usr/src/app
+    networks:
+      - kanban-network
+
+  users-service:
+    build: ./users-service
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./users-service:/usr/src/app
+    networks:
+      - kanban-network
+
+  main-server: 
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - kanban-network
+
+networks:
+  kanban-network:
+    driver: bridge

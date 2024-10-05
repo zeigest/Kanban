@@ -5,7 +5,7 @@ body {
 .kanban-title{
     color: white;
 }
-/* Centrado del título principal */
+
 .main-title-container {
     display: flex;
     justify-content: center;
@@ -17,7 +17,7 @@ body {
     background-color: #00534C;
 }
 
-/* Configuración del tablero Kanban */
+
 .kanban-board {
     display: flex;
     justify-content: space-between;
@@ -38,7 +38,6 @@ body {
     padding: 10px 10px;
 }
 
-/* Estilos para las tarjetas (task) */
 .task {
     background-color: #00534C;
     color: white;
@@ -47,7 +46,6 @@ body {
     transition: background-color 0.3s ease; 
 }
 
-/* Efecto hover sobre las tarjetas */
 .task:hover {
     background-color: #006907; 
     cursor: pointer;

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Primera tarea",
+    "description": "Descripción de la primera tarea",
+    "responsible": "Juan Pérez",
+    "status": "done"
+  },
+  {
+    "id": 2,
+    "name": "Nueva tarea",
+    "description": "Esta es una tarea de prueba",
+    "responsible": "Juan Pérez",
+    "status": "doing"
+  },
+  {
+    "id": 3,
+    "name": "Tarea modificada",
+    "description": "Esta es una tarea modificada",
+    "responsible": "Luis Rodríguez",
+    "status": "done"
+  },
+  {
+    "id": 4,
+    "name": "Tarea de prueba",
+    "description": "Es una tarea de prueba",
+    "responsible": "Juan Pérez",
+    "status": "todo"
+  },
+  {
+    "id": 5,
+    "name": "Tarea para Fase 1",
+    "description": "Esta es una tarea para la Fase 1 de Desarrollo FullStack",
+    "responsible": "Ana Gómez",
+    "status": "todo"
+  },
+  {
+    "id": 6,
+    "name": "Tarea modificada 2",
+    "description": "Modificamos la tarea",
+    "responsible": "Luis Rodríguez",
+    "status": "done"
+  },
+  {
+    "id": 7,
+    "name": "Otra tarea",
+    "description": "Más tareas",
+    "responsible": "Luis Rodríguez",
+    "status": "todo"
+  },
+  {
+    "id": 8,
+    "name": "Tarea video",
+    "description": "Esta es una tarea de prueba",
+    "responsible": "Ana Gómez",
+    "status": "doing"
+  }
+]
